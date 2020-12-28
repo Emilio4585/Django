@@ -9,9 +9,17 @@
 </head>
 <body>
     <header>
-        <h1>
-            <a href="{% url 'home' %}">Django Blog</a>
-        </h1>
+        <div>
+            <h1>
+                <a href="{% url 'home' %}">Django Blog</a>
+            </h1>
+        </div>
+        <div>
+            <h1>
+                <a href="{% url 'post_new' %}">Add post</a>
+            </h1>
+        </div>
+        
     </header>
     <section>
         {% block content %}
