@@ -1,4 +1,4 @@
-"""blog_project URL Configuration
+"""newspaper_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import TemplateView 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.blog.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('apps.accounts.urls')),
-] 
-#http://127.0.0.1:8000/accounts/signup/
+    path('users/', include('users.urls')),
+    path('users/', include('django.contrib.auth.urls')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home' )
+]
