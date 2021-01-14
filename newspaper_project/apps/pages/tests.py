@@ -34,6 +34,7 @@ class SignUpPageTest(TestCase):
         response = self.client.get(reverse('signup'))
         self.assertEqual(response.status_code , 200)
         self.assertTemplateUsed(response, 'registration/signup.html')
+        
     def test_signup_form(self):
         new_user = get_user_model().objects.create_user(
             self.username,self.email
