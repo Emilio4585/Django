@@ -28,7 +28,12 @@
               </ul>
             </div>
           </nav>
-        
+
+          {% if user.is_authenticated %}
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a href="{% url 'article_new' %}">+ New</a></li>
+            </ul>
+          {% endif %}
         <div class="container">
             {% block content %}
                 
