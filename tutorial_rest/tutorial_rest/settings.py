@@ -37,8 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
 
+]
+THIRD_APPS = [
+    'rest_framework',
+]
+APPS = [
+    'inicio',
+]
+INSTALLED_APPS += THIRD_APPS + APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -99,6 +106,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+##Paginacion rest_framework
+REST_FRAMEWORK={
+    'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE':10
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
